@@ -1,0 +1,10 @@
+.title {
+    font-weight : bold;
+    padding : 1rem 0rem;
+}
+
+.price {
+    font-style: italic;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid red;
+}
