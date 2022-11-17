@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import TaskContainer from './components/TaskContainer';
-/*
+import Task from './components/Task';
+
 const taskList = [
   {"id":"task1","title":"Buy Milk","isComplete":true},
   {"id":"task2","title":"Read a book","isComplete":false},
@@ -10,17 +11,33 @@ const taskList = [
   {"id":"task5","title":"Visit the puppy shelter","isComplete":true},
   {"id":"task6","title":"Watch Bad Sisters","isComplete":false}
 ];
-*/
 
 function App() {
-  
-   return (
-      <Fragment>
-        <h1 key="heading">Task List</h1>
-        <TaskContainer>
-          {/* Task: Nesting Components - Add you tasks here: */}
-        </TaskContainer>
-      </Fragment>
+
+  const [tasks,setTasks] = useState(taskList);
+
+  function toggleComplete(id){
+    setTasks(tasks.map((task) => {
+      if (task.id === id) {
+        task.isComplete = !task.isComplete;
+        return task;
+      }
+      return task;
+    }))
+  }
+
+  return (
+    <Fragment>
+      <h1 key="heading">Task List</h1>
+      <TaskContainer>
+        {tasks.map((task) =>
+          <Task key={task.id}
+                id={task.id}
+                isComplete={task.isComplete}
+                title={task.title}
+                toggleComplete={toggleComplete} />)}
+      </TaskContainer>
+    </Fragment>
   );
 }
 
