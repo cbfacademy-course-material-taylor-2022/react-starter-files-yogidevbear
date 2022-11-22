@@ -8,10 +8,14 @@ export default function App() {
       <ul className="breadcrumb">
         <li><Link to="/"> All Pets </Link></li>
         <li><Link to="/kittens"> Kittens </Link></li>
+        <li><Link to="/puppies"> Puppies </Link></li>
+        <li><Link to="/ducklings"> Ducklings </Link></li>
       </ul>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="kittens" element={<Kittens />} />
+        <Route path="puppies" element={<Puppies />} />
+        <Route path="ducklings" element={<Ducklings />} />
       </Routes>
   </Router>
   );
@@ -22,7 +26,7 @@ function Home() {
           <h1>All Pets</h1>
           <section>This is the page for all your pet needs</section>
           <img src="imgs/kitten.jpg" alt="Kitten"/>
-          <img src="imgs/puppy.jpg" alt="Puppy"/>
+          <img src="imgs/puppy.jpg" alt="Puppies"/>
           <img src="imgs/duckling.jpg" alt="Duckling"/>
         </>
 }
@@ -30,8 +34,24 @@ function Home() {
 function Kittens() {
   return <>
       <h1>Kittens</h1>
-      <section>This is the cats page</section>
+      <section>This is the kittens page</section>
       <img src="imgs/kitten.jpg" alt="Kitten"/>
+    </>
+}
+
+function Puppies() {
+  return <>
+      <h1>Puppies</h1>
+      <section>This is the puppies page</section>
+      <img src="imgs/puppy.jpg" alt="Puppy"/>
+    </>
+}
+
+function Ducklings() {
+  return <>
+      <h1>Ducklings</h1>
+      <section>This is the ducklings page</section>
+      <img src="imgs/duckling.jpg" alt="Duckling"/>
     </>
 }
 
