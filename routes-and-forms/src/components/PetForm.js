@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 
 const PetForm = () => {
   const [name, setName] = useState('');
-  const [,setSubmitted] = useState(false);
+  const [age, setAge] = useState('');
+  const [colours, setColours] = useState('');
+  const [hasSubmitted,setSubmitted] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -17,11 +19,20 @@ const PetForm = () => {
         <div>
           <label>Pet's Name:<input type="text" value={name} onChange={(e) => { setName(e.target.value); setSubmitted(false) }} /></label>
         </div>
+        <div>
+          <label>Age:<input type="text" value={age} onChange={(e) => { setAge(e.target.value); setSubmitted(false) }} /></label>
+        </div>
+        <div>
+          <label>Colours:<input type="text" value={colours} onChange={(e) => { setColours(e.target.value); setSubmitted(false) }} /></label>
+        </div>
         <input type="submit" value="Submit" id="submit-button"/>
       </form>
       <div id="results">
         <h3>Results</h3>
-            Name: {name}<br />
+        { hasSubmitted && <h4>Thank you for submitting!</h4>}
+        Name: {name}<br />
+        Age: {age}<br/>
+        Colours: {colours}
       </div>
     </div>
   );
