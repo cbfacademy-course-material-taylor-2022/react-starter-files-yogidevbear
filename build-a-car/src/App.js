@@ -9,11 +9,11 @@ import Skateboard from './components/Skateboard'
 export default function App() {
   return (
     <div className='App'>
-      <Car />
-      <Bicycle />
-      <Truck />
-      <Bus />
-      <Skateboard />
+      <Car numberOfWheels="4" />
+      <Bicycle numberOfWheels="2" />
+      <Bus numberOfWheels="6" />
+      <Truck numberOfWheels="8" />
+      <Skateboard numberOfWheels="4" />
     </div>
   );
 }
